@@ -9,7 +9,7 @@ import numpy as np
 
 def poker_hand_problem():
     '''define a few functions for readability and code reuse then run problem near the end
-    at the bottom'''
+    at the bottom. Problem 1'''
     #Rank dict, we can drop R flush as it's an instance of S Flush
     rank = {'High Card': 0,
             'One Pair': 1,
@@ -137,19 +137,19 @@ def poker_hand_problem():
     print(outcomes.count('p1'))
     
 def fib_problem():
-    '''Calculate a fibonacci sequence and stops before the stop_val
-    then recognizing that even numbers occur every 3rd step so it strides by that
-    then sums'''
+    '''Calculate a fibonacci sequence and stops before the stop_val and adds any
+    number that is even to an out value. Problem 6'''
     stop_val = 4000000
-    out_list = []
     past_current = 1
-    current =1
+    current = 1
+    sum_out = 0
     while current<stop_val:
-        out_list.append(current)
+        if current % 2 ==0:
+            sum_out+= current
         temp = current
         current = current+past_current
         past_current = temp
-    print(sum(out_list[1::3]))
+    print(sum_out)
 
 if __name__ == '__main__':
     poker_hand_problem()
