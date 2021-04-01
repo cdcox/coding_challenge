@@ -44,10 +44,10 @@ def poker_hand_problem():
     
     
     def test_for_straights_pairs(values):
-        '''takes in values which ahve been converted to numbered list and tests for 
-        various hands, straights sequentially increase by one, and other hands can
-        be found by frequencies of repeated values returns ordered high cards
-        formatted by hand type, and the string reprsentation of the hand '''  
+        '''takes in values which have been converted to numbered list and tests for 
+        various hands. Straights sequentially increase by one, and other hands can
+        be found by frequencies of repeated values. Returns ordered high cards
+        formatted by hand type, and the string representation of the hand type '''  
         sequential = values[1:]-values[:-1]
         uniques,counts = np.unique(values, return_counts=True)
         uniques = uniques[::-1]
@@ -56,7 +56,7 @@ def poker_hand_problem():
             label = 'Straight'
             ordered_rest = list(uniques)        
         #one crazy straight called a 5 high straight    
-        elif np.all(values == np.array([14,5,4,3,2])):
+        elif np.all(values == np.array([2,3,4,5,14])):
             label = 'Straight'
             ordered_rest = list[values[1:]] +[0]     
         elif 4 in counts:
@@ -100,8 +100,8 @@ def poker_hand_problem():
         return full_label,ordered_rest
     
     def compare_hands(p1_hand, p2_hand,rank):
-        '''takes the two hands, finds thier rank value and compares, if rank is 
-        equivelent then compares the ordered card values to find the winner.
+        '''takes the two hands, finds their rank value and compares. If rank is 
+        equivelent then it compares the ordered card values to find the winner.
         Can also handle tie results though these are disallowed. Returns the winner'''
         p1_hand_label,p1_ordered_rest = get_hand_label(p1_hand)
         p2_hand_label,p2_ordered_rest =get_hand_label(p2_hand)        
@@ -137,8 +137,8 @@ def poker_hand_problem():
     print(outcomes.count('p1'))
     
 def fib_problem():
-    '''Calculate a fibnonacci sequence and stops before the stop_val
-    then recognizing that even numbers occuer every 3rd step strides that
+    '''Calculate a fibonacci sequence and stops before the stop_val
+    then recognizing that even numbers occur every 3rd step so it strides by that
     then sums'''
     stop_val = 4000000
     out_list = []
